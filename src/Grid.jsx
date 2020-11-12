@@ -28,7 +28,7 @@ export default function Grid() {
             let children = []
             for (let j = 0; j < width; j++) {
                 let rand = Math.random();
-                if (rand <= 0.05) {
+                if (rand <= 0.1) {
                     children.push(1);
                     count += 1;
                 } else {
