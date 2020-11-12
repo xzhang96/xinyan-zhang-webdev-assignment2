@@ -19,7 +19,6 @@ class App extends React.Component {
                         <Route render={() => <h1>Page not found!</h1>}/>
                     </Switch>
                 </Router>
-                
             </div>
         );
     }

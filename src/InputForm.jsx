@@ -1,5 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button'
 
 class InputForm extends React.Component {
 
@@ -19,18 +24,41 @@ class InputForm extends React.Component {
     render() {
         return (
             <>
-                <form className="form" onSubmit={this.handleSubmit}>
-                    <label for="height">Height: </label>
-                    <input type="text" id="height"/>
-                    <br/><br/>
-                    <label for="width">Width: </label>
-                    <input type="text" id="width"/>
-                    <br/><br/>
-                    <button type="submit">Submit</button>
-                </form>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group as={Row}>
+                        <Col sm="2"/>
+                        <Col sm="2">
+                            <Form.Label>Height: </Form.Label>
+                        </Col>
+                        <Col sm="6">
+                            <Form.Control type="text" id="height"/>
+                        </Col>
+                    </Form.Group>
+
+                    <Form.Group as={Row}>
+                        <Col sm="2"/>
+                        <Col sm="2">
+                            <Form.Label>Width: </Form.Label>
+                        </Col>
+                        <Col sm="6">
+                            <Form.Control type="text" id="width"/>
+                        </Col>
+                    </Form.Group>
+                    <Button type="submit">Submit</Button>
+                </Form>
             </>
         );
     }
 }
 
-export default withRouter(InputForm);
+// let mapDispatchToProps = function(dispatch, props) {
+//     return {
+//         setSize: (height, width) => {dispatch({
+//             type: "SET_SIZE",
+//             height: height,
+//             width: width
+//         })}
+//     }
+// }
+
+export default withRouter((InputForm));
